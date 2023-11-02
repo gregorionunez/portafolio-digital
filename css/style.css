@@ -64,8 +64,21 @@ body{
     width: 80vw;
     height: 40vw;
     display: grid;
-    grid-template-columns: repeat(1fr,1fr);
+    grid-template-columns: repeat(2,1fr);
     align-items: center;
+}
+
+.info-content h1{
+    width: 45rem;
+    animation: animacion 7s steps(80) infinite, transparent .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+.info-content:hover .mano{
+    display: inline-block;
+    animation: animacionmano .5s steps(10) infinite;
 }
 
 h1{
@@ -93,15 +106,15 @@ span{
 }
 
 .main img{
-    grid-column: 2;
+    margin-left: 15em;
     width: 350px;
     border: 7px solid aqua;
     box-shadow: 1px 3px 11px -5px aqua;
-    transition: filter 1s;
+    transition: box-shadow 1s;
 }
 
 .main img:hover{
-    filter: blur(5px);
+    box-shadow: 0px 0px 50px -5px aqua;
 }
 
 .about{
@@ -132,6 +145,71 @@ span{
     background-color: aqua;
     margin-top: 5px;
     margin-bottom: 1.5em;
+}
+
+.estudios{
+    width: 100vw;
+    padding: 5em;
+}
+
+.estudios h2{
+    font-size: 3em;
+}
+
+.lenguajes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lenguajes div:hover{
+    box-shadow: 5px 5px 20px #191c32;
+    cursor: pointer;
+    transform: translateY(-3%);
+}
+
+.html,
+.css,
+.js,
+.java{
+    background: #191c32;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px #191c32;
+    transition: all .5s ease;
+}
+
+.linea{
+    width: 5em;
+    border: 2px solid #191c32;
+}
+
+.html ion-icon,
+.css ion-icon,
+.js ion-icon,
+.java ion-icon{
+    font-size: 100px;
+}
+
+.html{
+    color: #e34c26;
+}
+
+.css{
+    color: #264de4;
+}
+
+.js{
+    color: #F0DB4F;
+}
+
+.java{
+    color: #fff;
 }
 
 .about p{
@@ -257,4 +335,22 @@ span{
 
 .sotial-network ion-icon:hover{
     color: #191c32;
+}
+
+@keyframes animacion{
+    50%{
+        width: 20rem;
+    }
+}
+
+@keyframes animacionmano{
+    50%{
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes transparent{
+    50%{
+        border-color: transparent;
+    }
 }
