@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio | Gregorio Nuñez</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     
     <div class="wrapper">
         
         <header>
-            <nav class="navbar">
-                <div class="brand">
-                    <h2>G<span>N</span></h2>
-                </div>
-                <button class="abrir-menu"><ion-icon name="grid-outline"></ion-icon></button>
+            <div class="brand">
+                <h2>G<span>N</span></h2>
+            </div>
+            <div class="abrir-menu" id="abrir"><ion-icon name="menu-outline"></ion-icon></div>
+            <nav class="navbar" id="nav">
+                <div class="cerrar-menu" id="cerrar"><ion-icon name="close-circle-outline"></ion-icon></div>
                 <ul class="menu">
                     <li><a href="#" class="active" draggable="false">Inicio</a></li>
                     <li><a href="#about"draggable="false">Sobre mi</a></li>
@@ -71,23 +73,18 @@
         <div class="container">
             <div class="card">
                 <div class="card__img">
+                    <img src="assets/card_portafolio.jpg" alt="">
                 </div>
                 <div class="card__title">
                     Mi Portafolio
                 </div>
                 <div class="card__descripcion">
-                  Portafolio en HTML, CSS, JS
+                  Portafolio en HTML, CSS y JS
                 </div>
             <div class="projects-links">
-                <a href="https://github.com/gregorionunez/portafolio-digital" target="_blank">
-                    <ion-icon name="logo-github"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="earth-outline"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="code-slash-outline"></ion-icon>
-                </a>
+                    <ion-icon name="logo-html5" style="color: #e34c26"></ion-icon>
+                    <ion-icon name="logo-css3" style="color: #264de4"></ion-icon>
+                    <ion-icon name="logo-javascript" style="color: #F0DB4F"></ion-icon>
             </div>
             <div class="project-details-container">
                 <button class="project-details descargar-cv">
@@ -162,6 +159,7 @@
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
