@@ -1,40 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* ------------ RESET ------------*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     user-select: none;
-}
-
-body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper{
+/* ------------ CONTENIDO PRINCIPAL ------------*/
+.contenedor-principal{
     width: 100vw;
     height: 100vh;
     background-color: #191c32;
     color: #fff;
 }
 
-.navbar{
-    display: flex;
-    padding: 1em;
-    justify-content: space-between;
-}
-
+/* ------------ HEADER ------------*/
 header{
     display: flex;
     justify-content: space-between;
 }
 
-.brand{
+/* LOGO */
+.logo{
     margin-top: .5em;
+    color: aqua;
 }
 
-.brand span{
-    color: aqua;
+.logo h2::first-letter{
+    color: #fff;
+}
+
+/* MENU */
+.navbar{
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
 }
 
 .abrir-menu{
@@ -42,12 +45,11 @@ header{
     z-index: 900;
     top: 0;
     right: 0;
-    margin: 20px 35px;
+    margin: 10px;
     cursor: pointer;
 }
 
 .abrir-menu ion-icon{
-    padding: 3px;
     background-color: aqua;
     border-radius: 50%;
     color: black;
@@ -57,7 +59,7 @@ header{
 .abrir-menu,
 .cerrar-menu{
     display: none;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .menu{
@@ -92,33 +94,37 @@ header{
     transition: background-color 1s, color 1s;
 }
 
+
+/* ------------ MAIN ------------*/
 .main{
     margin: 0 auto;
-    width: 80vw;
-    height: 40vw;
-    display: flex;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 90vw, 10vw;
     align-items: center;
+    padding: 10em;
 }
 
+/* INFORMACION */
 .info-content{
-    width: 60rem;
+    grid-column: 1;
 }
 
 .info-content h1{
-    width: 45rem;
+    position: relative;
     animation: animacion 7s steps(80) infinite, transparent .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
+    font-size: 3rem;
+    display: inline;
 }
+
+
 
 .info-content:hover .mano{
     display: inline-block;
     animation: animacionmano .5s steps(10) infinite;
-}
-
-h1{
-    font-size: 3em;
 }
 
 span{
@@ -141,11 +147,16 @@ span{
     transition: box-shadow 1s,background-color 0.5s;
 }
 
+/* FOTO PREFIL */
 .main img{
-    width: 350px;
+    grid-column: 2;
+    width: 60%;
+    min-width: 200px;
+    max-width: 350px;
     border: 7px solid aqua;
     box-shadow: 1px 3px 11px -5px aqua;
     transition: all 1s ease;
+    margin: 0 auto;
 }
 
 .main img:hover{
@@ -153,6 +164,8 @@ span{
     transform: translateY(-3%);
 }
 
+
+/* ------------ ABOUT ------------*/
 .about{
     display: grid;
     grid-template-columns: repeat(10,1fr);
@@ -163,6 +176,7 @@ span{
 .about img{
     width: 100%;
     grid-column: 1/5;
+    max-width: 750px;
 }
 
 .about-info{
@@ -183,13 +197,14 @@ span{
     margin-bottom: 1.5em;
 }
 
+/* ------------ ESTUDIOS ------------*/
 .estudios{
     width: 100vw;
-    padding: 5em;
+    padding: 3em;
 }
 
 .estudios h2{
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .lenguajes{
@@ -199,7 +214,6 @@ span{
 }
 
 .lenguajes div:hover{
-    box-shadow: 5px 5px 20px #191c32;
     cursor: pointer;
     transform: translateY(-3%);
 }
@@ -208,16 +222,21 @@ span{
 .css,
 .js,
 .java{
-    background: #191c32;
-    width: 150px;
-    height: 150px;
     margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0px 1px 10px #191c32;
     transition: all .5s ease;
+}
+
+@media screen and (max-width: 700px) {
+    .lenguajes{
+        display: flex;
+        flex-direction: column;
+    }
+    .linea{
+        display: none;
+    }
 }
 
 .linea{
@@ -230,6 +249,10 @@ span{
 .js ion-icon,
 .java ion-icon{
     font-size: 100px;
+    border-radius: 50%;
+    background: #191c32;
+    padding: 15px;
+    box-shadow: 0px 1px 10px #191c32;
 }
 
 .html{
@@ -383,12 +406,6 @@ span{
     color: #191c32;
 }
 
-@keyframes animacion{
-    50%{
-        width: 20rem;
-    }
-}
-
 @keyframes animacionmano{
     50%{
         transform: rotate(20deg);
@@ -405,6 +422,14 @@ span{
     .abrir-menu,
     .cerrar-menu{
         display: block;
+    }
+
+    .about{
+        display: block;
+    }
+
+    .about img{
+        display: none;
     }
 
     .navbar{
@@ -441,24 +466,20 @@ span{
     }
 }
 
-@media screen and (max-width: 850px) {
-
-    h1{
-        font-size: 5vw;
+@media (max-width: 1300px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+        padding: 3em 0px;
+        align-items: center;
+    }
+    .info-content{
+        padding: 3em 0px;
     }
     .info-content h1{
-        animation: none;
-        border: none;
+      font-size: 1.5em;
     }
-}
-
-@media screen and (max-width: 1400px){
-    .main{
-        display: block;
-        margin: 2em auto;
+    .main img{
+        margin: 0 auto;
     }
-    
-    .info-content{
-        margin: 2em 0;
-    }
-}
+  }
