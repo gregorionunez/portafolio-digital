@@ -229,16 +229,6 @@ span{
     transition: all .5s ease;
 }
 
-@media screen and (max-width: 700px) {
-    .lenguajes{
-        display: flex;
-        flex-direction: column;
-    }
-    .linea{
-        display: none;
-    }
-}
-
 .linea{
     width: 5em;
     border: 2px solid #191c32;
@@ -275,6 +265,8 @@ span{
     margin-bottom: 1em;
 }
 
+/* ------------ POYECTOS ------------*/
+
 .portafolio{
     width: 100vw;
     background-color: #191c32;
@@ -282,36 +274,37 @@ span{
 }
 
 .portafolio-headings {
-    width: 100vw;
-    padding: 5em;
+    padding: 3em;
 }
 
 .portafolio-headings h2{
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .portafolio .container{
     width: 80vw;
     height: 80vh;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,33%);
     justify-content: center;
 }
 
 .card {
+    grid-column: auto;
     width: 300px;
     height: 400px;
     border-radius: 10px;
     background-color: #383e6b;
     color: #fff;
-    margin: 1em;
+    margin: 1em auto;
     transition: all .5s ease;
 
 }
 
 .card:hover{
     box-shadow: 0px 0px 20px #5962a7;
-    transform: scale(1.3);
+    transform: scale(1.1);
     z-index: 800;
 }
 
@@ -372,6 +365,8 @@ span{
     margin-bottom: auto;
 }
 
+/* ------------ FOOTER ------------*/
+
 .footer{
     display: flex;
     flex-direction: column;
@@ -406,6 +401,24 @@ span{
     color: #191c32;
 }
 
+/* ------------ BOTON ARRIBA ------------*/
+#boton-arriba{
+    position: fixed;
+    bottom: 20px;
+    right: -100px;
+    text-decoration: none;
+}
+
+#boton-arriba ion-icon{
+    font-size: 2em;
+    color: black;
+    background-color: aqua;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+/* ------------ ANIMACIONES ------------*/
+
 @keyframes animacionmano{
     50%{
         transform: rotate(20deg);
@@ -418,7 +431,48 @@ span{
     }
 }
 
-@media screen and (max-width: 600px) {
+/* ------------ RESPONISVE ------------*/
+@media (max-width: 1300px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+        padding: 3em 0px;
+        align-items: center;
+    }
+    .info-content{
+        padding: 3em 0px;
+    }
+    .info-content h1{
+      font-size: 1.5em;
+    }
+    .main img{
+        margin: 0 auto;
+    }
+    .portafolio{
+        height: 1100px;
+    }
+    .portafolio .container{
+        grid-template-columns: repeat(2, 50%);
+    }
+  }  
+
+@media (max-width: 800px) {
+    .portafolio{
+        height: 1500px;
+    }
+    .portafolio .container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .lenguajes{
+        display: flex;
+        flex-direction: column;
+    }
+    .linea{
+        display: none;
+    }
     .abrir-menu,
     .cerrar-menu{
         display: block;
@@ -466,20 +520,6 @@ span{
     }
 }
 
-@media (max-width: 1300px) {
-    .main{
-        display: flex;
-        flex-direction: column;
-        padding: 3em 0px;
-        align-items: center;
-    }
-    .info-content{
-        padding: 3em 0px;
-    }
-    .info-content h1{
-      font-size: 1.5em;
-    }
-    .main img{
-        margin: 0 auto;
-    }
-  }
+@media screen and (max-width: 600px) {
+
+}

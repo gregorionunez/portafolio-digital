@@ -9,3 +9,17 @@ abrir.addEventListener("click", () => {
 cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
+
+function irArriba(){
+    window.addEventListener('scroll', () => {
+        var scroll = document.documentElement.scrollTop;
+        var botonarriba = document.getElementById('boton-arriba');
+        if(scroll>300){
+            botonarriba.style.right = 20 + "px";
+        }else{
+            botonarriba.style.right = -100 + "px";
+        }
+    })
+}
+
+irArriba();
