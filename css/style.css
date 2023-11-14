@@ -199,6 +199,8 @@ span{
 
 /* ------------ ESTUDIOS ------------*/
 .estudios{
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
     width: 100vw;
     padding: 3em;
 }
@@ -207,21 +209,33 @@ span{
     font-size: 2em;
 }
 
+.divisor-est{
+    grid-row: 2;
+    height: 4px;
+    width: 60px;
+    background-color: aqua;
+    margin-top: 5px;
+    margin-bottom: 1.5em;
+}
+
 .lenguajes{
+    grid-row: 3;
+    grid-column: 2/10;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .lenguajes div:hover{
-    cursor: pointer;
     transform: translateY(-3%);
 }
 
 .html,
 .css,
 .js,
-.java{
+.sql,
+.java,
+.python{
     margin: 10px;
     display: flex;
     align-items: center;
@@ -237,13 +251,14 @@ span{
 .html ion-icon,
 .css ion-icon,
 .js ion-icon,
-.java ion-icon{
+.sql ion-icon{
     font-size: 100px;
     border-radius: 50%;
     background: #191c32;
     padding: 15px;
     box-shadow: 0px 1px 10px #191c32;
 }
+
 
 .html{
     color: #e34c26;
@@ -257,12 +272,96 @@ span{
     color: #F0DB4F;
 }
 
-.java{
+.sql{
     color: #fff;
+}
+
+.java img{
+    width: 130px;
+    height: 130px;
+    padding: 15px;
+    box-shadow: 0px 1px 10px #191c32;
+    border-radius: 50%;
+    background: #191c32;
+}
+
+.python{
+    width: 130px;
+    height: 130px;
+    padding: 15px;
+    box-shadow: 0px 1px 10px #191c32;
+    border-radius: 50%;
+    background: #191c32;
+}
+
+.python img{
+    width: 90px;
+    height: 90px;
 }
 
 .about p{
     margin-bottom: 1em;
+}
+.ver-mas,
+.cerrar-ver-mas{
+    display: flex;
+    margin-top: 25px;
+    grid-row: 4;
+    grid-column: 1/10;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.ver-mas button,
+.cerrar-ver-mas button{
+    padding: 10px 20px;
+    background-color: aqua;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px -5px aqua;
+}
+
+.ver-mas button:hover,
+.cerrar-ver-mas button:hover{
+    background-color: #191c32;
+    color: white;
+    box-shadow: none;
+    transition: box-shadow 1s,background-color 0.5s;
+}
+
+.estudios-desc{
+    display: none;
+    grid-row: 5;
+    grid-column: 2/10;
+    box-shadow: 0px 0px 20px #191c32;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.estudios-desc a:visited{
+    color: blue;
+}
+
+.est{
+    margin: 20px;
+}
+
+.est h3{
+    display: inline-block;
+    border-bottom: 1px solid #191c32;
+    margin-bottom: 10px;
+}
+
+.est h6{
+    margin-top: 10px;
+}
+
+.est h6 a{
+    text-decoration: none;
+    font-size: 15px;
 }
 
 /* ------------ POYECTOS ------------*/
@@ -393,6 +492,10 @@ span{
     margin-top: 1em;
 }
 
+.sotial-network a:visited{
+    color: black;
+}
+
 .sotial-network ion-icon{
     font-size: 1.5em;
 }
@@ -454,6 +557,13 @@ span{
     .portafolio .container{
         grid-template-columns: repeat(2, 50%);
     }
+    .lenguajes{
+        display: flex;
+        flex-direction: column;
+    }
+    .linea{
+        display: none;
+    }
   }  
 
 @media (max-width: 800px) {
@@ -466,13 +576,7 @@ span{
 }
 
 @media screen and (max-width: 730px) {
-    .lenguajes{
-        display: flex;
-        flex-direction: column;
-    }
-    .linea{
-        display: none;
-    }
+
     .abrir-menu,
     .cerrar-menu{
         display: block;
